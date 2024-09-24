@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c6tws0s2ihoah"]
+
+[ext_resource type="Texture2D" uid="uid://bt3v0xih683fo" path="res://objects/powerup/wedge.png" id="1_a7ixf"]
+[ext_resource type="Texture2D" uid="uid://ckyam843qldmj" path="res://objects/powerup/bagel.png" id="1_y0jfg"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y0jfg")
+}],
+"loop": true,
+"name": &"bagel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a7ixf")
+}],
+"loop": true,
+"name": &"cheese",
+"speed": 5.0
+}]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd2bvgbpi7jau"]
+
+[ext_resource type="Script" path="res://objects/player/player.gd" id="1_tdi6v"]
+[ext_resource type="SpriteFrames" uid="uid://d0fx1ywyxevu7" path="res://objects/player/player_frames.tres" id="2_io2ip"]
+[ext_resource type="Shape3D" uid="uid://dil7w8gkeaki5" path="res://objects/player/player.tres" id="3_rjx73"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_tdi6v")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.1
+axis = 1
+texture_filter = 0
+sprite_frames = ExtResource("2_io2ip")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00596, 0)
+shape = ExtResource("3_rjx73")

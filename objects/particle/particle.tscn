@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://crf0ry23srcrn"]
+
+[ext_resource type="Shape3D" uid="uid://imdykc2egui6" path="res://objects/particle/shape.tres" id="1_fv7rt"]
+[ext_resource type="Script" path="res://objects/particle/particle.gd" id="1_p6fl3"]
+
+[node name="Particle" type="RigidBody3D"]
+script = ExtResource("1_p6fl3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("1_fv7rt")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+axis = 1
+texture_filter = 0

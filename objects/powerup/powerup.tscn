@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj3cyg8ed78q0"]
+
+[ext_resource type="Script" path="res://objects/powerup/powerup.gd" id="1_fi08o"]
+[ext_resource type="SpriteFrames" uid="uid://c6tws0s2ihoah" path="res://objects/powerup/frames.tres" id="1_wdsjv"]
+[ext_resource type="Shape3D" uid="uid://byp0af0vwyirl" path="res://objects/powerup/shape.tres" id="2_vgpw3"]
+
+[node name="Powerup" type="StaticBody3D" groups=["powerup"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_fi08o")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.1
+axis = 1
+texture_filter = 0
+sprite_frames = ExtResource("1_wdsjv")
+animation = &"cheese"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("2_vgpw3")
