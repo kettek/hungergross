@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://b552auepyhdy6"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_0jjkr"]
+
+[node name="UI" type="SubViewportContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0jjkr")
+
+[node name="Viewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="HungerRect" type="ColorRect" parent="Viewport"]
+offset_left = 256.0
+offset_right = 512.0
+offset_bottom = 23.0
+color = Color(0, 1, 0, 1)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Viewport"]
+offset_left = 256.0
+offset_right = 512.0
+offset_bottom = 23.0
+editor_only = false
+
+[node name="HungerLabel" type="Label" parent="Viewport"]
+offset_left = 256.0
+offset_right = 324.0
+offset_bottom = 23.0
+text = "HUNGER"

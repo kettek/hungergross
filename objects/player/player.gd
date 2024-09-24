@@ -1,15 +1,17 @@
 extends CharacterBody3D
 
 var speed = 1
+var hunger = 0
 var tv = Vector3.ZERO
 var anim: AnimatedSprite3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	STATE.current = STATE.TYPE.LIVE
 	speed = GlobalPlayer.Speed
 	anim = get_node("AnimatedSprite3D")
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
 	var d = Vector3.ZERO
 	
 	if Input.is_action_pressed("east"):
@@ -44,10 +46,24 @@ func _physics_process(delta: float) -> void:
 			if collider.kind == POWERUPS.KIND.CHEESE:
 				print("it cheese")
 				speed += 0.5
+				hunger -= 0.01
 			elif collider.kind == POWERUPS.KIND.BAGEL:
 				print("it bagel")
 				speed += 1
+				hunger -= 0.02
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	hunger += 0.001
+	if hunger > 1.0:
+		hunger = 1.0
+	if hunger < 0:
+		hunger = 0
+	if hunger == 1:
+		friggin_die()
+	UI.setHunger(hunger)
+
+func friggin_die() -> void:
+	PARTICLES.explode(get_node("AnimatedSprite3D"), position)
+	STATE.current = STATE.TYPE.DEAD
+	queue_free()

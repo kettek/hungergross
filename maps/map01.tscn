@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://niyjy850ad4q"]
+[gd_scene load_steps=5 format=3 uid="uid://niyjy850ad4q"]
 
 [ext_resource type="Script" path="res://maps/scripts/randomizeCheese.gd" id="1_opmmc"]
 [ext_resource type="PackedScene" uid="uid://bd2bvgbpi7jau" path="res://objects/player/player.tscn" id="1_tk5i0"]
 [ext_resource type="PackedScene" uid="uid://crf0ry23srcrn" path="res://objects/particle/particle.tscn" id="3_okv5s"]
+[ext_resource type="PackedScene" uid="uid://b552auepyhdy6" path="res://ui.tscn" id="4_ulwee"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_opmmc")
@@ -16,3 +17,5 @@ size = 24.0
 collision_mask = 14
 
 [node name="Particle" parent="." instance=ExtResource("3_okv5s")]
+
+[node name="UI" parent="." instance=ExtResource("4_ulwee")]

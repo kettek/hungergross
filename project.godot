@@ -19,6 +19,9 @@ config/icon="res://objects/player/icon.svg"
 
 GlobalPlayer="*res://globals/GlobalPlayer.gd"
 POWERUPS="*res://globals/POWERUPS.gd"
+UI="*res://globals/UI.gd"
+STATE="*res://globals/STATE.gd"
+PARTICLES="*res://globals/PARTICLES.gd"
 
 [input]
 
