@@ -41,20 +41,17 @@ func _physics_process(_delta: float) -> void:
 		if collider == null:
 			continue
 		
-		if collider.is_in_group("powerup"):
+		if collider.is_in_group("powerup") && !collider.isConsumed:
 			collider.consume()
-			if collider.kind == POWERUPS.KIND.CHEESE:
-				print("it cheese")
-				speed += 0.5
-				hunger -= 0.01
-			elif collider.kind == POWERUPS.KIND.BAGEL:
-				print("it bagel")
-				speed += 1
-				hunger -= 0.02
+			hunger -= POWERUPS.NUTRITION[collider.kind]
+			speed += POWERUPS.AMPERAGE[collider.kind]
+			STATE.eatFood()
 			UI.setSpeed(speed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if STATE.current != STATE.TYPE.LIVE:
+		return
 	hunger += 0.001
 	if hunger > 1.0:
 		hunger = 1.0
@@ -66,5 +63,5 @@ func _process(_delta: float) -> void:
 
 func friggin_die() -> void:
 	PARTICLES.explode(get_node("AnimatedSprite3D"), position)
-	STATE.current = STATE.TYPE.DEAD
+	STATE.setState(STATE.TYPE.DEAD)
 	queue_free()

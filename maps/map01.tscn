@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://niyjy850ad4q"]
 
-[ext_resource type="Script" path="res://maps/scripts/randomizeCheese.gd" id="1_opmmc"]
+[ext_resource type="Script" path="res://maps/scripts/randomizeMap.gd" id="1_opmmc"]
 [ext_resource type="PackedScene" uid="uid://bd2bvgbpi7jau" path="res://objects/player/player.tscn" id="1_tk5i0"]
 [ext_resource type="PackedScene" uid="uid://crf0ry23srcrn" path="res://objects/particle/particle.tscn" id="3_okv5s"]
 [ext_resource type="PackedScene" uid="uid://b552auepyhdy6" path="res://ui.tscn" id="4_ulwee"]
