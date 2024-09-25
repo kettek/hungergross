@@ -11,7 +11,7 @@ func _ready() -> void:
 	speed = GlobalPlayer.Speed
 	anim = get_node("AnimatedSprite3D")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var d = Vector3.ZERO
 	
 	if Input.is_action_pressed("east"):
@@ -51,9 +51,10 @@ func _physics_process(delta: float) -> void:
 				print("it bagel")
 				speed += 1
 				hunger -= 0.02
+			UI.setSpeed(speed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	hunger += 0.001
 	if hunger > 1.0:
 		hunger = 1.0
