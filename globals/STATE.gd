@@ -14,3 +14,7 @@ func eatFood() -> void:
 
 func setState(t: TYPE) -> void:
 	current = t
+	if t == TYPE.DONE:
+		UI.weinerLabel.show()
+	elif t == TYPE.DEAD:
+		UI.ripLabel.show()

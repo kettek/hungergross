@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b552auepyhdy6"]
+[gd_scene load_steps=3 format=3 uid="uid://b552auepyhdy6"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_0jjkr"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_skrxa"]
+font_size = 48
+font_color = Color(0.50149, 0.293029, 0.134036, 1)
+outline_size = 8
+
 [node name="UI" type="SubViewportContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1151.0
+offset_bottom = 647.0
 script = ExtResource("1_0jjkr")
 
 [node name="Viewport" type="SubViewport" parent="."]
@@ -36,3 +41,19 @@ offset_top = 23.0
 offset_right = 305.0
 offset_bottom = 46.0
 text = "SPEED 1"
+
+[node name="RIP" type="Label" parent="Viewport"]
+offset_top = 192.0
+offset_right = 416.0
+offset_bottom = 259.0
+text = "U DED"
+label_settings = SubResource("LabelSettings_skrxa")
+horizontal_alignment = 1
+
+[node name="BigWiener" type="Label" parent="Viewport"]
+offset_top = 96.0
+offset_right = 277.0
+offset_bottom = 141.0
+text = "UR BIGGE WEINER"
+label_settings = SubResource("LabelSettings_skrxa")
+horizontal_alignment = 1

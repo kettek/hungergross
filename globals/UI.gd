@@ -3,6 +3,8 @@ extends Node
 var hungerRect: ColorRect
 var maxRectSize: float
 var speedLabel: Label
+var weinerLabel: Label
+var ripLabel: Label
 
 func setHunger(v: float) -> void:
 	if hungerRect != null:
