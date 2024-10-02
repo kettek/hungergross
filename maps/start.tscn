@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://x2h7iupg0mlg"]
+
+[ext_resource type="Script" path="res://maps/scripts/randomizeMap.gd" id="1_eokev"]
+[ext_resource type="PackedScene" uid="uid://bd2bvgbpi7jau" path="res://objects/player/player.tscn" id="2_m7krs"]
+[ext_resource type="PackedScene" uid="uid://crf0ry23srcrn" path="res://objects/particle/particle.tscn" id="3_egqde"]
+[ext_resource type="PackedScene" uid="uid://b552auepyhdy6" path="res://ui.tscn" id="4_tuwmg"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_eokev")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13, 0)
+projection = 1
+size = 24.0
+
+[node name="Player" parent="." instance=ExtResource("2_m7krs")]
+collision_mask = 14
+
+[node name="Particle" parent="." instance=ExtResource("3_egqde")]
+
+[node name="UI" parent="." instance=ExtResource("4_tuwmg")]
